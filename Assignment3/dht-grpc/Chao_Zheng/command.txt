@@ -1,0 +1,31 @@
+curl -s "https://get.sdkman.io/" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java 17.0.1-ms
+java -version
+
+
+
+
+
+scp -i C:\Users\czhen\Downloads\dht.pem E:\CS\549\hw\Assignment3\dht-grpc\target\dht.jar ec2-user@18.218.254.191:/home/ec2-user/
+scp -i C:\Users\czhen\Downloads\dht.pem E:\CS\549\hw\Assignment3\dht-grpc\target\dht.jar ec2-user@18.227.52.237:/home/ec2-user/
+scp -i C:\Users\czhen\Downloads\dht.pem E:\CS\549\hw\Assignment3\dht-grpc\target\dht.jar ec2-user@3.135.208.102:/home/ec2-user/
+scp -i C:\Users\czhen\Downloads\dht.pem E:\CS\549\hw\Assignment3\dht-grpc\target\dht.jar ec2-user@3.15.18.159:/home/ec2-user/
+
+
+java –jar dht.jar --host ip-address --http http-port --id id
+
+java -jar ftp.jar --clientIp 52.91.103.193 --serverAddr ec2-3-82-175-62.compute-1.amazonaws.com --serverPort 5050
+
+
+
+java -jar dht.jar 172.31.3.115  --http 8080 --id 25
+
+java -jar dht.jar 172.31.4.56 --http 8080 --id 33
+
+java -jar dht.jar 172.31.5.103 --http 8080 --id 42
+ 
+java -jar dht.jar 172.31.7.171  --http 8080 --id 24
+
+
+join 172.31.4.56 8080
