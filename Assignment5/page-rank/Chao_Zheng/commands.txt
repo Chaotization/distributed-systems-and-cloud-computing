@@ -1,0 +1,58 @@
+
+hadoop jar PageRank.jar init input output 5
+
+hadoop fs -cat /home/hadoop/hw5/data/finish/output/output.txt
+
+
+
+hadoop fs -rm -r /home/hadoop/hw5/data
+hadoop fs -rm -r input/input.txt
+
+hadoop fs -put hw5/input.txt input
+
+hadoop jar PageRank.jar finish input finish 5
+
+hadoop fs -cat finish/part-r-00000
+
+hadoop jar PageRank.jar composite input /home/hadoop/hw5/data/finish/output /home/hadoop/hw5/data/iter/output /home/hadoop/hw5/data/iter/output2 /home/hadoop/hw5/data/diff/output 5
+
+
+hadoop fs -ls /home/hadoop/hw5/data/finish/output
+
+hadoop jar PageRank.jar init input output 5
+
+ssh -i ~/dht.pem hadoop@ec2-18-221-189-164.us-east-2.compute.amazonaws.com
+
+
+scp -i hw5/dht.pem hw5/PageRank.jar hw5/links-simple-sorted.tgz hw5/page-names.tgz  ec2-18-191-71-123.us-east-2.compute.amazonaws.com:
+
+scp -i hw5/dht.pem hw5/links-simple-sorted.tgz hw5/page-names.tgz ec2-18-191-71-123.us-east-2.compute.amazonaws.com:
+
+
+
+
+
+
+hdfs dfs -ls /user/hadoop
+
+
+
+hadoop jar PageRank.jar composite /user/hadoop/users/links-simple-sorted /user/hadoop/users/finalout /user/hadoop/users/inter1 /user/hadoop/users/inter2 /user/hadoop/users/page-names 5
+
+
+
+sudo systemctl restart hadoop-yarn-resourcemanager
+sudo systemctl restart hadoop-yarn-nodemanager
+
+
+sudo nano /etc/hadoop/conf/yarn-site.xml
+
+
+
+hdfs dfs -rm -r /user/hadoop/users/inter1 /user/hadoop/tempdiff /user/hadoop/users/inter2 /user/hadoop/users/finalout
+
+<property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value></property>
+
+
+
+
