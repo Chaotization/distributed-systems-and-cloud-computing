@@ -1,0 +1,15 @@
+curl -s "https://get.sdkman.io/" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java 20.0.1-amzn
+java -version
+
+
+
+scp -i C:\Users\czhen\Downloads\ftp.pem E:\CS\CS549\Assignment1\ftp-server\target\ftpd.jar ec2-user@13.59.12.146:/home/ec2-user/
+
+scp -i C:\Users\czhen\Downloads\ftp.pem E:\CS\CS549\Assignment1\ftp-client\target\ftp.jar ec2-user@3.133.120.33:/home/ec2-user
+
+
+java -jar ftpd.jar --serverIp 172.31.0.5 server-addr--serverPort 5050
+
+java -jar ftp.jar --clientIp 172.31.8.145 --serverAddr 172.31.0.5 --serverPort 5050
